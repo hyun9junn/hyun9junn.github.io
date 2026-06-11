@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hyun9junn | Personal Website</title>
+  <title>Hyungjun Kim | Personal Website</title>
   <style>
     :root {
-      --bg: #f6f3ee;
+      --bg: #f7f4ef;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
       --accent: #2563eb;
       --accent-soft: #dbeafe;
       --border: #e5e7eb;
+      --dark: #111827;
     }
 
     * {
@@ -41,7 +42,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(246, 243, 238, 0.92);
+      background: rgba(247, 244, 239, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -78,7 +79,7 @@
     main {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 48px 24px 80px;
+      padding: 56px 24px 80px;
     }
 
     section {
@@ -88,10 +89,10 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.4fr 0.8fr;
+      grid-template-columns: 1.45fr 0.85fr;
       gap: 40px;
       align-items: center;
-      min-height: 70vh;
+      min-height: 72vh;
     }
 
     .badge {
@@ -101,7 +102,7 @@
       color: var(--accent);
       border-radius: 999px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 18px;
     }
 
@@ -115,7 +116,7 @@
     .hero p {
       font-size: 19px;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 660px;
       margin-bottom: 28px;
     }
 
@@ -152,7 +153,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 28px;
-      padding: 24px;
+      padding: 28px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
@@ -167,7 +168,7 @@
       align-items: center;
       justify-content: center;
       font-size: 54px;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--accent);
       overflow: hidden;
     }
@@ -188,6 +189,17 @@
       font-size: 15px;
     }
 
+    .quick-list {
+      margin-top: 18px;
+      text-align: left;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quick-list li {
+      margin-bottom: 6px;
+    }
+
     .section-title {
       font-size: 32px;
       letter-spacing: -0.04em;
@@ -196,7 +208,7 @@
 
     .section-desc {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 24px;
     }
 
@@ -204,6 +216,10 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .card {
@@ -224,6 +240,13 @@
       margin-bottom: 10px;
     }
 
+    .card .period {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
     .card p,
     .card li {
       color: var(--muted);
@@ -239,7 +262,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .tag {
@@ -248,14 +271,19 @@
       background: #f3f4f6;
       color: #374151;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
     }
 
     .contact-box {
-      background: #111827;
+      background: var(--dark);
       color: white;
       border-radius: 28px;
-      padding: 32px;
+      padding: 34px;
     }
 
     .contact-box .section-desc {
@@ -285,34 +313,42 @@
       font-size: 14px;
     }
 
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .grid,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 24px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
       .nav-links {
         justify-content: flex-start;
+      }
+
+      main {
+        padding-top: 36px;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
-      <a class="logo" href="#">hyun9junn</a>
+      <a class="logo" href="#home">Hyungjun Kim</a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
         <a href="#courses">Courses</a>
@@ -325,86 +361,196 @@
   <main>
     <section class="hero" id="home">
       <div>
-        <span class="badge">Personal Website</span>
-        <h1>Hello, I’m Hyun.</h1>
+        <span class="badge">SNU · Civil Engineering · AI</span>
+        <h1>Hello, I’m Hyungjun Kim.</h1>
         <p>
-          I am a student interested in technology, problem solving, and building useful things.
-          This website introduces my background, projects, activities, and contact information.
+          I am an undergraduate student at Seoul National University majoring in Civil and Environmental Engineering
+          with an interdisciplinary major in Artificial Intelligence. I am interested in large language models,
+          efficient inference, quantization, and deploying AI systems to real-world environments.
         </p>
         <div class="button-row">
           <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#experience">View Experience</a>
           <a class="btn" href="#contact">Contact Me</a>
-          <a class="btn" href="assets/cv.pdf" target="_blank">Download CV</a>
         </div>
       </div>
 
       <aside class="profile-card">
         <div class="profile-image">
-          <!-- If you upload assets/profile.jpg, replace the H below with:
-          <img src="assets/profile.jpg" alt="Profile photo" />
-          -->
-          H
+          HJ
         </div>
-        <h2>Hyun9junn</h2>
-        <p>Student · GitHub Pages Website</p>
+        <h2>Hyungjun Kim</h2>
+        <p>Undergraduate Student · AI & Efficient Inference</p>
+        <ul class="quick-list">
+          <li>Seoul National University</li>
+          <li>Civil and Environmental Engineering</li>
+          <li>Interdisciplinary Major in Artificial Intelligence</li>
+          <li>GitHub: hyun9junn</li>
+        </ul>
       </aside>
     </section>
 
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <p class="section-desc">
-        Write a short self-introduction here. You can mention your major, academic interests,
-        career goals, and the kinds of problems you enjoy solving.
+        I am interested in the intersection of engineering, artificial intelligence, and real-world problem solving.
+        My main technical interests include Large Language Models, model quantization, efficient inference,
+        GPU-aware optimization, and practical AI system deployment.
       </p>
 
       <div class="grid">
         <div class="card">
-          <h3>Background</h3>
+          <h3>Academic Background</h3>
           <p>
-            I am currently studying at university and exploring areas such as programming,
-            data, AI, and web development.
+            I study Civil and Environmental Engineering at Seoul National University and also pursue an
+            interdisciplinary major in Artificial Intelligence. My academic background gives me both engineering
+            problem-solving skills and computational AI perspectives.
           </p>
         </div>
+
         <div class="card">
-          <h3>Interests</h3>
+          <h3>Technical Interests</h3>
           <p>
-            My interests include software development, artificial intelligence, creative tools,
-            and practical problem solving.
+            I am especially interested in LLM quantization, efficient inference, GPU performance bottlenecks,
+            vLLM serving, CUDA-related optimization, and applying AI systems to production environments.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <h2 class="section-title">Projects & Activities</h2>
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
       <p class="section-desc">
-        This section includes at least two activities or projects, as required for the assignment.
+        I have gained hands-on experience through internships at AI startups, research labs, and production engineering teams.
+      </p>
+
+      <div class="timeline">
+        <div class="card">
+          <h3>Solution Architect Intern — SqueezeBits</h3>
+          <div class="period">2026.03 – Present</div>
+          <ul>
+            <li>Worked on hardware-aware software optimization for efficient model inference.</li>
+            <li>Collaborated with Modular Mojo / MAX framework to accelerate diffusion model inference.</li>
+            <li>Investigated FP8 quantization slowdowns in FLUX-based diffusion models.</li>
+            <li>Profiled GPU kernel dispatch efficiency, memory movement, and scaling overhead.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>ML Research Engineer Intern — AsteroMorph</h3>
+          <div class="period">2026.01 – 2026.02</div>
+          <ul>
+            <li>Optimized repeated inference and weight-update loops using vLLM.</li>
+            <li>Tuned FP8 kernels for efficient execution on NVIDIA B200 GPUs.</li>
+            <li>Improved RAG retrieval performance and trained reranker models.</li>
+            <li>Built automated synthetic data pipelines using LLMs.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Undergraduate Research Intern — SNU MLLab</h3>
+          <div class="period">2025.06 – 2025.12</div>
+          <ul>
+            <li>Conducted research on LLM quantization for efficient inference.</li>
+            <li>Investigated performance gaps between theoretical and real GPU speedups.</li>
+            <li>Contributed to the FlatQuant open-source repository.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Undergraduate Research Intern — SNU CMALab</h3>
+          <div class="period">2024.10 – 2025.06</div>
+          <ul>
+            <li>Studied GPTQ, AWQ, QuaRot, and related quantization methods.</li>
+            <li>Implemented research ideas using PyTorch and Transformers.</li>
+            <li>Assisted research on reasoning-oriented LLM optimization.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">
+        Selected projects related to AI systems, quantization, web development, and applied programming.
       </p>
 
       <div class="grid">
         <div class="card">
-          <h3>Project 1 — Personal Website</h3>
+          <h3>K-EXAONE Quantization</h3>
           <p>
-            Built and deployed a static personal website using HTML, CSS, and GitHub Pages.
-            The website includes personal introduction, resume, projects, and contact information.
+            Quantized LG AI Research K-EXAONE model into W4A16 AWQ format, published deployable checkpoints
+            on Hugging Face, and validated compatibility with the vLLM serving stack.
           </p>
           <div class="tag-list">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">GitHub Pages</span>
+            <span class="tag">Quantization</span>
+            <span class="tag">AWQ</span>
+            <span class="tag">vLLM</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Project 2 — Course or Club Activity</h3>
+          <h3>FlatQuant Optimization</h3>
           <p>
-            Replace this with one of your course projects, club activities, research experiences,
-            competitions, or personal projects.
+            Analyzed performance bottlenecks in FlatQuant post-training quantization and investigated why
+            theoretical quantization speedups were not fully achieved in real GPU inference.
           </p>
           <div class="tag-list">
-            <span class="tag">Teamwork</span>
-            <span class="tag">Problem Solving</span>
-            <span class="tag">Learning</span>
+            <span class="tag">LLM</span>
+            <span class="tag">GPU</span>
+            <span class="tag">Open Source</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>H-Trust</h3>
+          <p>
+            Built an AI trust decision support platform powered by Gemini API. The project included modular
+            reasoning pipelines, deployable web architecture, and AI-assisted development workflows.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Gemini API</span>
+            <span class="tag">Web</span>
+            <span class="tag">AI Agent</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>ARC Reasoning LLM</h3>
+          <p>
+            Developed a lightweight Abstract Reasoning Corpus solver using a quantized Qwen LLM with
+            4-bit quantization, LoRA fine-tuning, geometric augmentation, and ensemble decoding.
+          </p>
+          <div class="tag-list">
+            <span class="tag">LoRA</span>
+            <span class="tag">Qwen</span>
+            <span class="tag">Reasoning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>MKCV</h3>
+          <p>
+            Designed a YAML-driven CV and resume generation platform using AI coding agents. The project
+            focused on single-source-of-truth resume management and rapid frontend/backend iteration.
+          </p>
+          <div class="tag-list">
+            <span class="tag">YAML</span>
+            <span class="tag">Resume</span>
+            <span class="tag">Claude Code</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pacman Game</h3>
+          <p>
+            Built a full C++ Pac-Man clone with maze navigation, collision handling, scoring, life reset
+            systems, and target-based AI ghost movement logic.
+          </p>
+          <div class="tag-list">
+            <span class="tag">C++</span>
+            <span class="tag">Game</span>
+            <span class="tag">AI Logic</span>
           </div>
         </div>
       </div>
@@ -413,43 +559,47 @@
     <section id="resume">
       <h2 class="section-title">CV / Resume</h2>
       <p class="section-desc">
-        Add your education, skills, experience, awards, or certifications here.
+        Summary of education, technical skills, awards, and extracurricular activities.
       </p>
 
       <div class="grid">
         <div class="card">
           <h3>Education</h3>
           <ul>
-            <li>University: Seoul National University or your school name</li>
-            <li>Major: Your major</li>
-            <li>Expected graduation: YYYY</li>
+            <li>Seoul National University</li>
+            <li>B.S. Civil and Environmental Engineering</li>
+            <li>Interdisciplinary Major in Artificial Intelligence</li>
+            <li>GPA: 3.92</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Skills</h3>
           <ul>
-            <li>Programming: Python, C++, JavaScript</li>
-            <li>Tools: Git, GitHub, VS Code</li>
-            <li>Other: Communication, research, documentation</li>
+            <li>Languages: Python, C++, SQL, Bash, MATLAB</li>
+            <li>AI / Deep Learning: PyTorch, Transformers, LoRA, Fine-tuning, Quantization</li>
+            <li>LLM Systems: vLLM, CUDA, TensorRT-LLM, Efficient Inference</li>
+            <li>Backend / Infra: Linux, Git, Docker, FastAPI, REST API</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Experience</h3>
+          <h3>Awards</h3>
           <ul>
-            <li>Course project or internship experience</li>
-            <li>Research, club, or team activity</li>
+            <li>1st Place, Hanwha Life Future Talent Contest — AI Sector</li>
+            <li>Excellence Award, SNU Liberal Education Report Competition</li>
+            <li>Special Award, Future Marine Science and Technology Talent Award</li>
+            <li>Silver Prize, Korea Mathematical Olympiad</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Downloadable CV</h3>
-          <p>
-            Upload your CV as <strong>assets/cv.pdf</strong>, then this button will work.
-          </p>
-          <br />
-          <a class="btn" href="assets/cv.pdf" target="_blank">Open CV</a>
+          <h3>Extracurricular Activities</h3>
+          <ul>
+            <li>Reporter / Vice President, Gongsang, SNU College of Engineering</li>
+            <li>Wrote official promotional articles for the College of Engineering</li>
+            <li>Mentored students in outreach engineering programs</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -457,15 +607,17 @@
     <section id="courses">
       <h2 class="section-title">Courses I Plan to Take</h2>
       <p class="section-desc">
-        List courses you plan to take in the future.
+        Courses I would like to take to deepen my knowledge in AI systems, software engineering, and data-driven problem solving.
       </p>
 
       <div class="card">
         <ul>
-          <li>Artificial Intelligence</li>
-          <li>Data Structures</li>
-          <li>Web Programming</li>
-          <li>Machine Learning</li>
+          <li>Advanced Machine Learning</li>
+          <li>Deep Learning</li>
+          <li>Natural Language Processing</li>
+          <li>Database Systems</li>
+          <li>Computer Systems or Operating Systems</li>
+          <li>Optimization Methods</li>
         </ul>
       </div>
     </section>
@@ -481,8 +633,9 @@
         <p><strong>Tool:</strong> ChatGPT</p>
         <p>
           <strong>Prompt:</strong>
-          Build a static personal website using only HTML, CSS, and JavaScript in a single index.html file.
-          Include About Me, Projects, CV, Courses, Contact, and AI Usage sections.
+          Create a static personal website for GitHub Pages using a single index.html file.
+          Use my CV information to fill in the About Me, Experience, Projects, Resume, Courses,
+          Contact, and AI Usage sections. Make the design clean, responsive, and accessible.
         </p>
       </div>
     </section>
@@ -491,21 +644,21 @@
       <div class="contact-box">
         <h2 class="section-title">Contact</h2>
         <p class="section-desc">
-          Feel free to contact me through email or GitHub.
+          Feel free to contact me through email or visit my GitHub and Hugging Face profiles.
         </p>
 
         <div class="contact-links">
-          <a href="mailto:your-email@example.com">Email</a>
+          <a href="mailto:khjmove@snu.ac.kr">Email</a>
           <a href="https://github.com/hyun9junn" target="_blank">GitHub</a>
           <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">Hugging Face</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Hyun9junn. Built with GitHub Pages.
+    © 2026 Hyungjun Kim. Built with GitHub Pages.
   </footer>
 </body>
 </html>
