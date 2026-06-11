@@ -1,7 +1,511 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>Welcome to my Personal Page</h1>
-    <p>Hosted on GitHub Pages!</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyun9junn | Personal Website</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(246, 243, 238, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    section {
+      margin-bottom: 72px;
+      scroll-margin-top: 90px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 70vh;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #fef3c7);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+      font-weight: 800;
+      color: var(--accent);
+      overflow: hidden;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-card h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .contact-box {
+      background: #111827;
+      color: white;
+      border-radius: 28px;
+      padding: 32px;
+    }
+
+    .contact-box .section-desc {
+      color: #d1d5db;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#">hyun9junn</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#courses">Courses</a>
+        <a href="#ai-usage">AI Usage</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <span class="badge">Personal Website</span>
+        <h1>Hello, I’m Hyun.</h1>
+        <p>
+          I am a student interested in technology, problem solving, and building useful things.
+          This website introduces my background, projects, activities, and contact information.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn" href="assets/cv.pdf" target="_blank">Download CV</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-image">
+          <!-- If you upload assets/profile.jpg, replace the H below with:
+          <img src="assets/profile.jpg" alt="Profile photo" />
+          -->
+          H
+        </div>
+        <h2>Hyun9junn</h2>
+        <p>Student · GitHub Pages Website</p>
+      </aside>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-desc">
+        Write a short self-introduction here. You can mention your major, academic interests,
+        career goals, and the kinds of problems you enjoy solving.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Background</h3>
+          <p>
+            I am currently studying at university and exploring areas such as programming,
+            data, AI, and web development.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Interests</h3>
+          <p>
+            My interests include software development, artificial intelligence, creative tools,
+            and practical problem solving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects & Activities</h2>
+      <p class="section-desc">
+        This section includes at least two activities or projects, as required for the assignment.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Project 1 — Personal Website</h3>
+          <p>
+            Built and deployed a static personal website using HTML, CSS, and GitHub Pages.
+            The website includes personal introduction, resume, projects, and contact information.
+          </p>
+          <div class="tag-list">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Project 2 — Course or Club Activity</h3>
+          <p>
+            Replace this with one of your course projects, club activities, research experiences,
+            competitions, or personal projects.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Teamwork</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2 class="section-title">CV / Resume</h2>
+      <p class="section-desc">
+        Add your education, skills, experience, awards, or certifications here.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Education</h3>
+          <ul>
+            <li>University: Seoul National University or your school name</li>
+            <li>Major: Your major</li>
+            <li>Expected graduation: YYYY</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Skills</h3>
+          <ul>
+            <li>Programming: Python, C++, JavaScript</li>
+            <li>Tools: Git, GitHub, VS Code</li>
+            <li>Other: Communication, research, documentation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Experience</h3>
+          <ul>
+            <li>Course project or internship experience</li>
+            <li>Research, club, or team activity</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Downloadable CV</h3>
+          <p>
+            Upload your CV as <strong>assets/cv.pdf</strong>, then this button will work.
+          </p>
+          <br />
+          <a class="btn" href="assets/cv.pdf" target="_blank">Open CV</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses">
+      <h2 class="section-title">Courses I Plan to Take</h2>
+      <p class="section-desc">
+        List courses you plan to take in the future.
+      </p>
+
+      <div class="card">
+        <ul>
+          <li>Artificial Intelligence</li>
+          <li>Data Structures</li>
+          <li>Web Programming</li>
+          <li>Machine Learning</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="ai-usage">
+      <h2 class="section-title">AI Usage</h2>
+      <p class="section-desc">
+        This section explains how AI was used to create or improve this website.
+      </p>
+
+      <div class="card">
+        <h3>AI Tool Used</h3>
+        <p><strong>Tool:</strong> ChatGPT</p>
+        <p>
+          <strong>Prompt:</strong>
+          Build a static personal website using only HTML, CSS, and JavaScript in a single index.html file.
+          Include About Me, Projects, CV, Courses, Contact, and AI Usage sections.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">
+          Feel free to contact me through email or GitHub.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:your-email@example.com">Email</a>
+          <a href="https://github.com/hyun9junn" target="_blank">GitHub</a>
+          <a href="#" target="_blank">LinkedIn</a>
+          <a href="#" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Hyun9junn. Built with GitHub Pages.
+  </footer>
+</body>
 </html>
