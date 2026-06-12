@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hyungjun Kim</title>
+  <title>Hyungjun Kim | Personal Website</title>
   <style>
     :root {
-      --bg: #fafafa;
-      --text: #222;
-      --muted: #666;
-      --line: #e5e5e5;
-      --accent: #2f5bea;
-      --card: #fff;
+      --bg: #f7f4ef;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --dark: #111827;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -23,208 +27,316 @@
     }
 
     body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(250, 250, 250, 0.95);
       position: sticky;
       top: 0;
       z-index: 10;
+      background: rgba(247, 244, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     nav {
-      max-width: 880px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 16px 20px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
 
     .logo {
-      font-weight: 700;
-      color: var(--text);
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.03em;
     }
 
     .nav-links {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: 18px;
       font-size: 14px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
     }
 
     main {
-      max-width: 880px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 56px 20px 80px;
+      padding: 56px 24px 80px;
     }
 
     section {
-      margin-bottom: 64px;
+      margin-bottom: 72px;
       scroll-margin-top: 90px;
     }
 
     .hero {
-      padding: 36px 0 48px;
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 64px;
+      display: grid;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 72vh;
     }
 
-    .avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: #eef2ff;
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      background: var(--accent-soft);
       color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 24px;
-      margin-bottom: 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 44px;
-      line-height: 1.1;
-      margin: 0 0 16px;
-      letter-spacing: -0.04em;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      margin-bottom: 20px;
     }
 
-    h2 {
-      font-size: 24px;
-      margin: 0 0 18px;
-      letter-spacing: -0.03em;
-    }
-
-    h3 {
-      font-size: 17px;
-      margin: 0 0 6px;
-    }
-
-    p {
-      margin: 0 0 14px;
-    }
-
-    .lead {
-      font-size: 18px;
+    .hero p {
+      font-size: 19px;
       color: var(--muted);
-      max-width: 720px;
+      max-width: 660px;
+      margin-bottom: 28px;
     }
 
-    .meta {
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--card);
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    .profile-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .profile-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe, #fef3c7);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 54px;
+      font-weight: 900;
+      color: var(--accent);
+      overflow: hidden;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-card h2 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .quick-list {
+      margin-top: 18px;
+      text-align: left;
       color: var(--muted);
       font-size: 14px;
-      margin-top: 18px;
+    }
+
+    .quick-list li {
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 24px;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 20px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      transition: 0.2s ease;
     }
 
-    .item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--line);
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
     }
 
-    .item:last-child {
-      border-bottom: none;
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
-    .period {
-      color: var(--muted);
+    .card .period {
+      color: var(--accent);
       font-size: 14px;
-      margin-bottom: 8px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
     }
 
     ul {
-      margin: 8px 0 0;
       padding-left: 20px;
-      color: var(--muted);
+      margin-top: 8px;
     }
 
-    li {
-      margin-bottom: 4px;
-    }
-
-    .tags {
+    .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .tag {
-      font-size: 13px;
-      color: #444;
-      background: #f1f1f1;
-      padding: 5px 9px;
+      padding: 7px 10px;
       border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 13px;
+      font-weight: 700;
     }
 
-    .contact {
-      background: #111;
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-box {
+      background: var(--dark);
       color: white;
-      border-radius: 16px;
-      padding: 28px;
+      border-radius: 28px;
+      padding: 34px;
     }
 
-    .contact p {
-      color: #ccc;
+    .contact-box .section-desc {
+      color: #d1d5db;
     }
 
-    .contact a {
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 14px;
+      border-radius: 12px;
       color: white;
-      margin-right: 14px;
-      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     footer {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 28px 20px;
-      border-top: 1px solid var(--line);
+      text-align: center;
       color: var(--muted);
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
       font-size: 14px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .grid,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
       nav {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .nav-links {
+        justify-content: flex-start;
       }
 
-      h1 {
-        font-size: 36px;
+      main {
+        padding-top: 36px;
       }
     }
   </style>
@@ -248,78 +360,129 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="avatar">HJ</div>
-      <h1>Hyungjun Kim</h1>
-      <p class="lead">
-        Undergraduate student at Seoul National University, studying Civil and Environmental Engineering
-        with an interdisciplinary major in Artificial Intelligence.
-      </p>
-      <p class="meta">
-        Interested in large language models, quantization, efficient inference, and practical AI systems.
-      </p>
+      <div>
+        <span class="badge">SNU · Civil Engineering · AI</span>
+        <h1>Hello, I’m Hyungjun Kim.</h1>
+        <p>
+          I am an undergraduate student at Seoul National University majoring in Civil and Environmental Engineering
+          with an interdisciplinary major in Artificial Intelligence. I am interested in large language models,
+          efficient inference, quantization, and deploying AI systems to real-world environments.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn" href="#experience">View Experience</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-image">
+          HJ
+        </div>
+        <h2>Hyungjun Kim</h2>
+        <p>Undergraduate Student · AI & Efficient Inference</p>
+        <ul class="quick-list">
+          <li>Seoul National University</li>
+          <li>Civil and Environmental Engineering</li>
+          <li>Interdisciplinary Major in Artificial Intelligence</li>
+          <li>GitHub: hyun9junn</li>
+        </ul>
+      </aside>
     </section>
 
     <section id="about">
-      <h2>About</h2>
-      <p>
-        I am interested in building AI systems that are not only accurate, but also efficient and usable in
-        real environments. My recent work has focused on LLM quantization, inference optimization, and
-        GPU-aware performance analysis.
+      <h2 class="section-title">About Me</h2>
+      <p class="section-desc">
+        I am interested in the intersection of engineering, artificial intelligence, and real-world problem solving.
+        My main technical interests include Large Language Models, model quantization, efficient inference,
+        GPU-aware optimization, and practical AI system deployment.
       </p>
-      <p>
-        Through research labs, startup internships, and personal projects, I have worked across model
-        optimization, AI application development, and software engineering.
-      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Academic Background</h3>
+          <p>
+            I study Civil and Environmental Engineering at Seoul National University and also pursue an
+            interdisciplinary major in Artificial Intelligence. My academic background gives me both engineering
+            problem-solving skills and computational AI perspectives.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Technical Interests</h3>
+          <p>
+            I am especially interested in LLM quantization, efficient inference, GPU performance bottlenecks,
+            vLLM serving, CUDA-related optimization, and applying AI systems to production environments.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="experience">
-      <h2>Experience</h2>
+      <h2 class="section-title">Experience</h2>
+      <p class="section-desc">
+        I have gained hands-on experience through internships at AI startups, research labs, and production engineering teams.
+      </p>
 
-      <div class="item">
-        <h3>Solution Architect Intern, SqueezeBits</h3>
-        <div class="period">2026.03 – Present</div>
-        <p>
-          Worked on efficient model inference, hardware-aware optimization, and performance analysis
-          for diffusion and LLM-related workloads.
-        </p>
-      </div>
+      <div class="timeline">
+        <div class="card">
+          <h3>Solution Architect Intern — SqueezeBits</h3>
+          <div class="period">2026.03 – Present</div>
+          <ul>
+            <li>Worked on hardware-aware software optimization for efficient model inference.</li>
+            <li>Collaborated with Modular Mojo / MAX framework to accelerate diffusion model inference.</li>
+            <li>Investigated FP8 quantization slowdowns in FLUX-based diffusion models.</li>
+            <li>Profiled GPU kernel dispatch efficiency, memory movement, and scaling overhead.</li>
+          </ul>
+        </div>
 
-      <div class="item">
-        <h3>ML Research Engineer Intern, AsteroMorph</h3>
-        <div class="period">2026.01 – 2026.02</div>
-        <p>
-          Optimized repeated inference workflows, improved RAG retrieval performance, and built synthetic
-          data pipelines using LLMs.
-        </p>
-      </div>
+        <div class="card">
+          <h3>ML Research Engineer Intern — AsteroMorph</h3>
+          <div class="period">2026.01 – 2026.02</div>
+          <ul>
+            <li>Optimized repeated inference and weight-update loops using vLLM.</li>
+            <li>Tuned FP8 kernels for efficient execution on NVIDIA B200 GPUs.</li>
+            <li>Improved RAG retrieval performance and trained reranker models.</li>
+            <li>Built automated synthetic data pipelines using LLMs.</li>
+          </ul>
+        </div>
 
-      <div class="item">
-        <h3>Undergraduate Research Intern, SNU MLLab</h3>
-        <div class="period">2025.06 – 2025.12</div>
-        <p>
-          Conducted research on LLM quantization and analyzed the gap between theoretical and real GPU speedups.
-        </p>
-      </div>
+        <div class="card">
+          <h3>Undergraduate Research Intern — SNU MLLab</h3>
+          <div class="period">2025.06 – 2025.12</div>
+          <ul>
+            <li>Conducted research on LLM quantization for efficient inference.</li>
+            <li>Investigated performance gaps between theoretical and real GPU speedups.</li>
+            <li>Contributed to the FlatQuant open-source repository.</li>
+          </ul>
+        </div>
 
-      <div class="item">
-        <h3>Undergraduate Research Intern, SNU CMALab</h3>
-        <div class="period">2024.10 – 2025.06</div>
-        <p>
-          Studied post-training quantization methods such as GPTQ, AWQ, and QuaRot using PyTorch and Transformers.
-        </p>
+        <div class="card">
+          <h3>Undergraduate Research Intern — SNU CMALab</h3>
+          <div class="period">2024.10 – 2025.06</div>
+          <ul>
+            <li>Studied GPTQ, AWQ, QuaRot, and related quantization methods.</li>
+            <li>Implemented research ideas using PyTorch and Transformers.</li>
+            <li>Assisted research on reasoning-oriented LLM optimization.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">
+        Selected projects related to AI systems, quantization, web development, and applied programming.
+      </p>
 
       <div class="grid">
         <div class="card">
           <h3>K-EXAONE Quantization</h3>
           <p>
-            Quantized LG AI Research K-EXAONE into W4A16 AWQ format and validated deployment with vLLM.
+            Quantized LG AI Research K-EXAONE model into W4A16 AWQ format, published deployable checkpoints
+            on Hugging Face, and validated compatibility with the vLLM serving stack.
           </p>
-          <div class="tags">
+          <div class="tag-list">
             <span class="tag">Quantization</span>
             <span class="tag">AWQ</span>
             <span class="tag">vLLM</span>
@@ -329,9 +492,10 @@
         <div class="card">
           <h3>FlatQuant Optimization</h3>
           <p>
-            Analyzed why theoretical quantization speedups were not fully realized in practical GPU inference.
+            Analyzed performance bottlenecks in FlatQuant post-training quantization and investigated why
+            theoretical quantization speedups were not fully achieved in real GPU inference.
           </p>
-          <div class="tags">
+          <div class="tag-list">
             <span class="tag">LLM</span>
             <span class="tag">GPU</span>
             <span class="tag">Open Source</span>
@@ -341,31 +505,62 @@
         <div class="card">
           <h3>H-Trust</h3>
           <p>
-            Built an AI trust decision support platform using Gemini API and AI-assisted development workflows.
+            Built an AI trust decision support platform powered by Gemini API. The project included modular
+            reasoning pipelines, deployable web architecture, and AI-assisted development workflows.
           </p>
-          <div class="tags">
+          <div class="tag-list">
             <span class="tag">Gemini API</span>
             <span class="tag">Web</span>
-            <span class="tag">AI</span>
+            <span class="tag">AI Agent</span>
           </div>
         </div>
 
         <div class="card">
           <h3>ARC Reasoning LLM</h3>
           <p>
-            Developed a lightweight ARC solver using a quantized Qwen model, LoRA fine-tuning, and augmentation.
+            Developed a lightweight Abstract Reasoning Corpus solver using a quantized Qwen LLM with
+            4-bit quantization, LoRA fine-tuning, geometric augmentation, and ensemble decoding.
           </p>
-          <div class="tags">
+          <div class="tag-list">
             <span class="tag">LoRA</span>
             <span class="tag">Qwen</span>
             <span class="tag">Reasoning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>MKCV</h3>
+          <p>
+            Designed a YAML-driven CV and resume generation platform using AI coding agents. The project
+            focused on single-source-of-truth resume management and rapid frontend/backend iteration.
+          </p>
+          <div class="tag-list">
+            <span class="tag">YAML</span>
+            <span class="tag">Resume</span>
+            <span class="tag">Claude Code</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Pacman Game</h3>
+          <p>
+            Built a full C++ Pac-Man clone with maze navigation, collision handling, scoring, life reset
+            systems, and target-based AI ghost movement logic.
+          </p>
+          <div class="tag-list">
+            <span class="tag">C++</span>
+            <span class="tag">Game</span>
+            <span class="tag">AI Logic</span>
           </div>
         </div>
       </div>
     </section>
 
     <section id="resume">
-      <h2>Resume</h2>
+      <h2 class="section-title">CV / Resume</h2>
+      <p class="section-desc">
+        Summary of education, technical skills, awards, and extracurricular activities.
+      </p>
 
       <div class="grid">
         <div class="card">
@@ -381,10 +576,10 @@
         <div class="card">
           <h3>Skills</h3>
           <ul>
-            <li>Python, C++, SQL, Bash, MATLAB</li>
-            <li>PyTorch, Transformers, LoRA, Quantization</li>
-            <li>vLLM, CUDA, TensorRT-LLM</li>
-            <li>Linux, Git, Docker, FastAPI</li>
+            <li>Languages: Python, C++, SQL, Bash, MATLAB</li>
+            <li>AI / Deep Learning: PyTorch, Transformers, LoRA, Fine-tuning, Quantization</li>
+            <li>LLM Systems: vLLM, CUDA, TensorRT-LLM, Efficient Inference</li>
+            <li>Backend / Infra: Linux, Git, Docker, FastAPI, REST API</li>
           </ul>
         </div>
 
@@ -394,53 +589,70 @@
             <li>1st Place, Hanwha Life Future Talent Contest — AI Sector</li>
             <li>Excellence Award, SNU Liberal Education Report Competition</li>
             <li>Special Award, Future Marine Science and Technology Talent Award</li>
+            <li>Silver Prize, Korea Mathematical Olympiad</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Activities</h3>
+          <h3>Extracurricular Activities</h3>
           <ul>
             <li>Reporter / Vice President, Gongsang, SNU College of Engineering</li>
-            <li>Wrote promotional articles and mentored students in outreach programs</li>
+            <li>Wrote official promotional articles for the College of Engineering</li>
+            <li>Mentored students in outreach engineering programs</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="courses">
-      <h2>Courses I Plan to Take</h2>
+      <h2 class="section-title">Courses I Plan to Take</h2>
+      <p class="section-desc">
+        Courses I would like to take to deepen my knowledge in AI systems, software engineering, and data-driven problem solving.
+      </p>
+
       <div class="card">
         <ul>
           <li>Advanced Machine Learning</li>
+          <li>Deep Learning</li>
           <li>Natural Language Processing</li>
           <li>Database Systems</li>
-          <li>Computer Systems</li>
+          <li>Computer Systems or Operating Systems</li>
           <li>Optimization Methods</li>
         </ul>
       </div>
     </section>
 
     <section id="ai-usage">
-      <h2>AI Usage</h2>
+      <h2 class="section-title">AI Usage</h2>
+      <p class="section-desc">
+        This section explains how AI was used to create or improve this website.
+      </p>
+
       <div class="card">
+        <h3>AI Tool Used</h3>
         <p><strong>Tool:</strong> ChatGPT</p>
         <p>
           <strong>Prompt:</strong>
-          Create a simple static personal website for GitHub Pages using a single index.html file.
-          Use my CV information to write concise About, Experience, Projects, Resume, Courses,
-          Contact, and AI Usage sections.
+          Create a static personal website for GitHub Pages using a single index.html file.
+          Use my CV information to fill in the About Me, Experience, Projects, Resume, Courses,
+          Contact, and AI Usage sections. Make the design clean, responsive, and accessible.
         </p>
       </div>
     </section>
 
     <section id="contact">
-      <div class="contact">
-        <h2>Contact</h2>
-        <p>
-          Feel free to reach out by email or visit my GitHub profile.
+      <div class="contact-box">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-desc">
+          Feel free to contact me through email or visit my GitHub and Hugging Face profiles.
         </p>
-        <a href="mailto:khjmove@snu.ac.kr">Email</a>
-        <a href="https://github.com/hyun9junn" target="_blank">GitHub</a>
+
+        <div class="contact-links">
+          <a href="mailto:khjmove@snu.ac.kr">Email</a>
+          <a href="https://github.com/hyun9junn" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/hyungjun-kim-200581389/?locale=en-US" target="_blank">LinkedIn</a>
+          <a href="https://huggingface.co/Hyun9junn" target="_blank">Hugging Face</a>
+        </div>
       </div>
     </section>
   </main>
